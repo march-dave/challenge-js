@@ -6,12 +6,12 @@ const port = process.env.port || 8080;
 
 server.set('view engine', 'ejs');
 
-server.use('/', (req, res) => {
+server.get('/', (req, res) => {
     res.render('index');
 });
 
 server.use('/api', apiRouter);
 server.use(express.static('public'));
 server.listen(port, () => {
-    console.info(`Note ${port}`);
+    console.info(`Express listening on port: ${port}`);
 });
