@@ -1,0 +1,42 @@
+{
+    "name": "challenge-js",
+    "version": "1.0.0",
+    "description": "challenge test",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon --exec babel-node server.js --ignore public/",
+        "dev": "webpack -wd"
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "author": "Dave Lee",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": ""
+    },
+    "homepage": "",
+    "dependencies": {
+        "axios": "",
+        "body-parser": "",
+        "ejs": "",
+        "express": "",
+        "json-loader": "",
+        "node-sass-middleware": "",
+        "react": "",
+        "react-dom": ""
+    },
+    "devDependencies": {
+        "babel-cli": "",
+        "babel-eslint": "",
+        "babel-loader": "",
+        "babel-preset-es2015": "",
+        "babel-preset-react": "",
+        "babel-preset-stage-2": "",
+        "eslint": "",
+        "eslint-plugin-react": "",
+        "nodemon": "",
+        "webpack": ""
+    }
+}
