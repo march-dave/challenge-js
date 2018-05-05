@@ -20,7 +20,7 @@
     "dependencies": {
         "axios": "",
         "body-parser": "",
-        "ejs": "",
+        "ejs": "^2.6.1",
         "express": "",
         "json-loader": "",
         "node-sass-middleware": "",
