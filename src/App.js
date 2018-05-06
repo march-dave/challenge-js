@@ -6,18 +6,19 @@ import axios from 'axios';
 class App extends Component {
   id = 2;
   state = {
-    information: [
-      {
-        id: 0,
-        name: 'Dave',
-        phone: '416-0000-0000'
-      },
-      {
-        id: 1,
-        name: 'Mike',
-        phone: '415-0000-0001'
-      }
-    ],
+    // information: [
+    //   {
+    //     id: 0,
+    //     name: 'Dave',
+    //     phone: '416-0000-0000'
+    //   },
+    //   {
+    //     id: 1,
+    //     name: 'Mike',
+    //     phone: '415-0000-0001'
+    //   }
+    // ],
+    information: [ {id: '', name: '', phone: ''}],
     keyword: ''
   };
 
@@ -44,16 +45,14 @@ class App extends Component {
   };
   handleRemove = id => {
 
-    console.log(id);
-
-    axios.delete('http://localhost:8080/api', id).then();
+    axios.delete(`http://localhost:8080/api/${id}`).then();
     
     const { information } = this.state;
     this.setState({
       information: information.filter(info => info.id !== id)
     });
   };
-  
+
   handleUpdate = (id, data) => {
     const { information } = this.state;
     this.setState({
@@ -69,7 +68,6 @@ class App extends Component {
   componentDidMount() {
     axios.get('http://localhost:8080/api').then(response => {
       this.setState({ information: response.data });
-     
     });
   }
 

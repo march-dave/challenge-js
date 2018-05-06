@@ -52,9 +52,8 @@ router.delete('/:id', (req, res) => {
 
 router.put('/:id', (req, res) => {
     const id = req.params.id;
-    Employee.update(id, (err, employee) => {
 
-        console.log(req.body);
+    Employee.update(id, req.body, (err, employee) => {
 
         if (err) return res.status(400).send(err);
         res.send(employee);
