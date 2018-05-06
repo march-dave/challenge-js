@@ -12,6 +12,9 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     Employee.create(req.body, (err, employee) => {
+
+        console.log(req.body);
+
         if (err) return res.status(400).send(err);
         res.send(employee);
     });

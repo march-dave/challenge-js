@@ -15,6 +15,35 @@ class App extends Component {
         });
     }
 
+    handlerDelete(event) {
+        console.log(event.target.value);
+    }
+
+    handlerName(event) {
+        // this.setState({ person: event.target.value });
+        console.log('Input Name' + event.target.value);
+        this.setState( {
+            name: event.target.value
+        });
+    }
+
+    handlerSubmit(event) {
+        
+        event.preventDefault();
+
+        // const person = {
+        //     name: event.target.value
+        // };
+        
+
+        axios.post('http://localhost:8080/api', {name: this.state.name}).then( 
+        
+        (response) => {
+            // this.setState({person: response.data});
+            console.log(response.data);
+        });
+    }
+
     render() {
 
         {/* Employee List {this.state.person.map( (c, i) => <li key={i}>id: {c.numid} {c.name} </li> ) }  */}
@@ -26,26 +55,26 @@ class App extends Component {
                 <table className="table table-striped">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>Number ID</th>
                             <th>Employee Name</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.person.map( (c, i) => <tr key={i}><td>{c.numid}</td><td>{c.name}</td><td><input type='checkbox' /></td></tr> ) }
+                        {this.state.person.map( (c, i) => <tr key={i}><td>{c.numid}</td><td>{c.name}</td><td><input type='checkbox' onClick={this.handlerDelete.bind(this)}  /></td></tr> ) }
                     </tbody>
                 </table>
 
 
 
-                   <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#myModal" id="#modal">new Car</button>
+                   <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#myModal" id="#modal">New Employee</button>
 
                     
                     <div className="modal fade" id="myModal"  role="dialog" aria-labelledby="myModalLabel">
                         <div className="modal-dialog" role="document">
                             <div className="modal-content">
                             
-                                <form className='submitform'>
+                                <form className='submitform' onSubmit={this.handlerSubmit.bind(this)}>
                                 <div className="modal-header">
                                     <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                     <h4 className="modal-title" id="myModalLabel">Info</h4>
@@ -56,13 +85,13 @@ class App extends Component {
                                 <div id='id'></div>
 
                                 <div className="form-group">
-                                    <label htmlFor="exampleInputName2">ID</label>
-                                    <input type="text" className="form-control" id="ID" placeholder="ID" />
+                                    <label htmlFor="inputNumberID">Number ID</label>
+                                    <input type="text" className="form-control" id="NumberID" placeholder="Number ID" />
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="exampleInputName2">Name</label>
-                                    <input type="text" className="form-control" id="Name" placeholder="Name" />
+                                    <label htmlFor="inputName">Name</label>
+                                    <input type="text" className="form-control" id="Name" placeholder="Name" onChange={this.handlerName.bind(this)} />
                                 </div>
 
                             </div>
