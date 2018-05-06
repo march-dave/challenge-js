@@ -54,6 +54,13 @@ class App extends Component {
   };
 
   handleUpdate = (id, data) => {
+
+    console.log('put id: ' + id + ' put data: ' + data.name);
+
+    axios
+      .put(`http://localhost:8080/api/${id}`, { name: data.name })
+      .then( response => console.log(response));
+
     const { information } = this.state;
     this.setState({
       information: information.map(
