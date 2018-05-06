@@ -1,6 +1,6 @@
 const db = require('../config/db');
 const uuid = require('uuid');
-// CREATE TABLE IF NOT EXISTS employee(numid integer primary key autoincrement, id text, make text);
+
 db.run(`CREATE TABLE IF NOT EXISTS employee(
   id integer primary key autoincrement,
   guid text,
