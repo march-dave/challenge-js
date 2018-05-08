@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import EmployeeForm from './components/EmployeeForm';
 import EmployeeList from './components/EmployeeList';
 import axios from 'axios';
-
 class App extends Component {
   id = 2;
   state = {
@@ -51,7 +50,7 @@ class App extends Component {
         info =>
           id === info.id
             ? { ...info, ...data } // to create new object
-            : info // previous object render
+            : info // current object render
       )
     });
   };
@@ -82,11 +81,11 @@ class App extends Component {
       <div>
         <EmployeeForm onCreate={this.handleCreate} />
         <p>
-          {/* <input
+          <input
             placeholder="검색 할 이름을 입력하세요.."
             onChange={this.handleChange}
             value={keyword}
-          /> */}
+          />
         </p>
         <hr />
         <EmployeeList
