@@ -82,7 +82,7 @@ class App extends Component {
         <EmployeeForm onCreate={this.handleCreate} />
         <p>
           <input
-            placeholder="검색 할 이름을 입력하세요.."
+            placeholder="Search for name"
             onChange={this.handleChange}
             value={keyword}
           />
