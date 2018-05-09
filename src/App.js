@@ -80,13 +80,13 @@ class App extends Component {
     return (
       <div>
         <EmployeeForm onCreate={this.handleCreate} />
-        <p>
+        {/* <p>
           <input
             placeholder="Search for name"
             onChange={this.handleChange}
             value={keyword}
           />
-        </p>
+        </p> */}
         <hr />
         <EmployeeList
           data={filteredList}
