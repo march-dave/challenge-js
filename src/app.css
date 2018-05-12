@@ -2,3 +2,8 @@ body {
     background: wheat;
     font-family: 'Courier New', Courier, monospace;
 }
+
+.left {
+    padding: 10px;
+    margin: 10px;
+}
