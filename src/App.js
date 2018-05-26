@@ -19,12 +19,13 @@ class App extends Component {
     axios
       .post('http://localhost:8080/api', { name: data.name })
       .then(response => {
-        console.log(response.data);
+        console.log('response.data: ' + response.data);
       });
     
-    const { information } = this.state;
+    const { information2 } = this.state;
+    console.log('information2: ' + information2);
     this.setState({
-      information: information.concat({ id: this.id++, ...data })
+      information: information2.concat({ id: this.id++, ...data })
     });
   };
 
