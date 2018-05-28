@@ -19,13 +19,14 @@ class App extends Component {
     axios
       .post('http://localhost:8080/api', { name: data.name })
       .then(response => {
-        console.log('response.data: ' + response.data);
+        console.log(response.data);
       });
     
-    const { information2 } = this.state;
-    console.log('information2: ' + information2);
+    console.log('this.state'+ this.state);
+
+    const { information } = this.state;
     this.setState({
-      information: information2.concat({ id: this.id++, ...data })
+      information: information.concat({ id: this.id++, ...data })
     });
   };
 
@@ -81,13 +82,13 @@ class App extends Component {
     return (
       <div>
         <EmployeeForm onCreate={this.handleCreate} />
-        {/* <p>
+        <p>
           <input
             placeholder="Search for name"
             onChange={this.handleChange}
             value={keyword}
           />
-        </p> */}
+        </p>
         <hr />
         <EmployeeList
           data={filteredList}
