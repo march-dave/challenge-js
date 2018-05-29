@@ -14,7 +14,7 @@
     "author": "Dave Lee",
     "license": "GPL-3.0",
     "bugs": {
-        "url": ""
+        "url": "localhost:3000"
     },
     "homepage": "",
     "dependencies": {
