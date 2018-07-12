@@ -4,8 +4,8 @@ import EmployeeInfo from './EmployeeInfo';
 class EmployeeList extends Component {
     static defaultProps = {
         list: [],
-        onRemove: () => console.warn('onRemove not defined'),
-        onUpdate: () => console.warn('onUpdate not defined'),
+        onRemove: () => console.warn('onRemove define required'),
+        onUpdate: () => console.warn('onUpdate define required'),
       }
     
       shouldComponentUpdate(nextProps, nextState) {
