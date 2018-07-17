@@ -16,7 +16,7 @@
     "bugs": {
         "url": "localhost:3000"
     },
-    "homepage": "",
+    "homepage": "challenge-js",
     "dependencies": {
         "axios": "^0.15.0",
         "body-parser": "^1.15.2",
