@@ -26,8 +26,8 @@
         "morgan": "^1.9.0",
         "node-sass-middleware": "^0.9.8",
         "path": "^0.12.7",
-        "react": "^15.3.2",
-        "react-dom": "^15.3.2",
+        "react": "^16.4.1",
+        "react-dom": "^16.4.1",
         "redux": "^4.0.0",
         "sqlite3": "^4.0.0",
         "uuid": "^3.2.1"
