@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 class EmployeeForm extends Component {
   state = {
     name: '',

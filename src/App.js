@@ -45,9 +45,6 @@ class App extends Component {
     axios
       .put(`http://localhost:8080/api/${id}`, { name: data.name })
       .then( response => console.log(response))
-      // .then( response => console.log('update 2'))
-      // .then( response => console.log('update 3'))
-      // .then( response => console.log('update 3'));
 
     const { information } = this.state;
     this.setState({
